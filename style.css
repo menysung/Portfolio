@@ -192,5 +192,5 @@ header {
 .home-imghover:hover {
   background-color: #081b29;
   opacity: 0.7;
-  /* 차이점?????? */
+  /* opacity: 투명도, 투명0<->1불투명 */
 }
