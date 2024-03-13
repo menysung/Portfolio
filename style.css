@@ -74,3 +74,58 @@ header {
   font-size: 16px;
   margin: 20px 0 40px;
 }
+
+.home-content .btn-box {
+  display: flex;
+  justify-content: space-between;
+  width: 345px;
+  height: 50px;
+}
+
+.btn-box a {
+  display: flex;
+  /* 글자 가운데 정렬 */
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 100%;
+  background-color: #00abf0;
+  border: 2px solid #00abf0;
+  border-radius: 8px;
+  font-size: 19px;
+  color: #081b29;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 1px;
+  z-index: 1;
+  overflow: hidden;
+  position: relative;
+  /* ralative.기준이 없으면 body(전체)가 기준이라서 tomato컬러 나옴 */
+}
+
+.btn-box a:nth-child(2) {
+  background-color: transparent;
+  color: #00abf0;
+}
+
+.btn-box a::before {
+  content: "";
+  position: absolute;
+  /* btn-box a 태그에 기준 ralative있음 */
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: tomato;
+  z-index: -1;
+  transition: 0.5s;
+}
+
+.btn-box a:hover::before {
+  /* a 버튼에 마우스 올릴 때 ::before(가상클래스) 적용된다 */
+  width: 100%;
+}
+
+.btn-box a:hover {
+  color: #ededed;
+}
