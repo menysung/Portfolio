@@ -25,10 +25,25 @@ header {
 }
 
 .logo {
+  position: relative;
+  /* 로고만 가려지도록 ralative 넣어야함 */
   font-size: 25px;
   color: #ededed;
   text-decoration: none;
   font-weight: 600;
+}
+
+.logo::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #081b29;
+  animation: showRight 1s ease forwards;
+  animation-delay: 0.4s;
+  /* delay : 0.4초 후에 시작한다 */
 }
 
 .navbar a {
@@ -63,17 +78,59 @@ header {
   font-size: 56px;
   font-weight: 700;
   line-height: 1.2;
+  position: relative;
+}
+
+.home-content h1::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 110%;
+  background-color: #081b29;
+  animation: showRight 1s ease forwards;
+  animation-delay: 1.3s;
+  /* delay : 1초 후에 시작한다 */
 }
 
 .home-content h3 {
   font-size: 32px;
   font-weight: 700;
   color: #00abf0;
+  position: relative;
+}
+
+.home-content h3::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 110%;
+  background-color: #081b29;
+  animation: showRight 1s ease forwards;
+  animation-delay: 1.3s;
+  /* delay : ~초 후에 시작한다 */
 }
 
 .home-content p {
   font-size: 16px;
   margin: 20px 0 40px;
+  position: relative;
+}
+
+.home-content p::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 110%;
+  background-color: #081b29;
+  animation: showRight 1s ease forwards;
+  animation-delay: 1.6s;
+  /* delay : ~초 후에 시작한다 */
 }
 
 .home-content .btn-box {
@@ -193,4 +250,11 @@ header {
   background-color: #081b29;
   opacity: 0.7;
   /* opacity: 투명도, 투명0<->1불투명 */
+}
+
+@keyframes showRight {
+  /* 최종 가로길이를 0으로 만드는 애니메이션 */
+  100% {
+    width: 0;
+  }
 }
